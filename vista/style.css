@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#EFFFDC;
+	}
+.tabla_resultados{
+	border:1px #000000 solid;
+	margin:auto;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	white-space:nowrap;
+	}
+.tabla_resultados tr:first-child td{
+	background-color:#282FB1;
+	color:#FFFFFF;
+	border:1px #000000 solid;
+	text-align:center;
+	font-size:16px;
+	}
+.tabla_resultados tr:nth-child(100n) td{
+	text-align:left;
+	}
+.tabla_resultados tr td{
+	width:auto;
+	font-size:14px;
+	border:1px #000000 solid;
+	}
+.tabla_seleccion{
+	border:1px #000000 solid;
+	margin:auto;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	white-space:nowrap;
+	}
+.tabla_seleccion td:first-child{
+	text-align:right;
+	}
+.tabla_seleccion tr:last-child td{
+	text-align:center;
+	}
+.tabla_reset{
+	border:none;
+	margin:auto;
+	white-space:nowrap;
+	}
+.tabla_host{
+	margin:auto;
+	white-space:nowrap;
+	}
+.tabla_where{
+	border:1px #000000 solid;
+	margin:auto;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	white-space:nowrap;
+	}
+.tabla_where tr td:first-child{
+	text-align:left;
+	}
+.tabla_where tr td:nth-child(2){
+	text-align:right;
+	}
+.tabla_where tr:first-child td{
+	text-align:center;
+	}
+.tabla_where tr:last-child td{
+	text-align:center;
+	}

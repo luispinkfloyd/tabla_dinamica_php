@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+		<p><h1 align='center'><?php echo str_replace('_',' ',ucfirst($tabla)); ?></h1></p>
+<br>
+<div class="table-responsive" style="margin-top:6px;background-color:#E3F5F0;"> 
+<table class="table-bordered table-striped" style="margin:auto; white-space:nowrap; background-color:#FFFFFF; border:solid 2px #000000">
+	<tr style="background-color:#1A2543;color:#FFFFFF">
+<?php
+for($i=0;$i<$count_columnas;$i++){
+?>
+    	<td>
+            	<b><?php echo str_replace('_',' ',ucfirst($resultado_columnas[$i][0])); ?></b>
+        </td>
+<?php
+}
+?>
+	</tr>
+<?php
+if(empty($resultado_filas)){
+	echo "<tr><td colspan='".$count_columnas."' style='background-color:#FFFFFF;' align='center'><h2><b>Esta tabla no contiene datos</b></h2></td></tr>";
+}else{
+	for($e=0;$e<$count_filas;$e++){
+	?>
+	<tr>
+	<?php
+		for($a=0;$a<$count_columnas;$a++){
+	?>
+			<td>
+			<?php
+			if($schema==='mapuche'){
+			echo utf8_encode($resultado_filas[$e][$a]);
+			}else{
+			echo $resultado_filas[$e][$a];
+		    }?>
+			</td>
+	<?php
+		}
+	?>
+		  </tr>
+	 <?php
+	}
+}
+ ?>
+</table>
+</div>
+<br>
+</body>
+</html>
