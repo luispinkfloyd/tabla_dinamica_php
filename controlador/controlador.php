@@ -40,6 +40,14 @@ $paginacion->records($count_filas_total);
 $paginacion->records_per_page($limit);
 $paginacion->padding(FALSE);
 $paginacion->render();
+echo "<form action='vista/pdf_output.php' method='get'>";
+echo "<input type='hidden' name='tabla2' value='".$tabla."'>";
+/*echo "<input type='hiden' name='' value=''";
+echo "<input type='hiden' name='' value=''";
+echo "<input type='hiden' name='' value=''";
+echo "<input type='hiden' name='' value=''";*/
+echo "<div align='center'><input align='middle' type='submit' value='Crear PDF'></div>";
+echo '</form>';
 }
 include 'vista/vista_reset_submit.php';
 }

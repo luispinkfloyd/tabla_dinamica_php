@@ -6,7 +6,7 @@
 <body>
 		<p><h1 align='center'><?php echo str_replace('_',' ',ucfirst($tabla)); ?></h1></p>
 <br>
-<div class="table-responsive" style="margin-top:6px;background-color:#E3F5F0;"> 
+<div class="table-responsive" style="margin-top:6px;background-color:#c9f8ff;"> 
 <table class="table-bordered table-striped" style="margin:auto; white-space:nowrap; background-color:#FFFFFF; border:solid 2px #000000">
 	<tr style="background-color:#1A2543;color:#FFFFFF">
 <?php
@@ -47,6 +47,5 @@ if(empty($resultado_filas)){
  ?>
 </table>
 </div>
-<br>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>Selección de <?php if(!isset($_GET['base_datos'])){echo "Base de Datos";}elseif(isset($_GET['base_datos']) and !isset($_GET['schema'])){echo "Schema";}elseif(isset($_GET['schema'])){echo "Tabla";}?></title>
 </head>
-<body class="media-body" style="background-color:#E3F5F0">
+<body class="media-body" style="background-color:#c9f8ff">
 <?php
 include 'controlador/controlador.php';
 ?>

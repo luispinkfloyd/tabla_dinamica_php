@@ -1,7 +1,7 @@
 <div class="table-responsive" style="margin-top:6px;">
-<table class="table-bordered" style="margin:auto;">
+<table style="margin:auto;">
         	<tr>
-            	<td align="right">Base de datos:</td><td><input type="text" name="base_datos" autocomplete="off" <?php if(isset($_GET['base_datos'])){echo "value='".$_GET['base_datos']."'>";}else{?>
+            	<td align="right"><b>Base de datos:</b></td><td><input type="text" name="base_datos" autocomplete="off" <?php if(isset($_GET['base_datos'])){echo "value='".$_GET['base_datos']."'>";}else{?>
 			list="bases">
 			<datalist id="bases">
 <?php
@@ -23,7 +23,7 @@ if(isset($_GET['base_datos'])){
   $count_schemas=count($resultado_schemas);
 ?>          
             
-            	<td align="right">Schema:</td><td><input type="text" name="schema" autocomplete="off" <?php if(isset($_GET['schema'])){echo "value='".$_GET['schema']."'";}else{?>
+            	<td align="right"><b>Schema:</b></td><td><input type="text" name="schema" autocomplete="off" <?php if(isset($_GET['schema'])){echo "value='".$_GET['schema']."'";}else{?>
 			list="schemas">
 			<datalist id="schemas">
 <?php
@@ -46,7 +46,7 @@ if(isset($_GET['base_datos']) && !isset($_GET['schema'])){
 	
 ?>
             
-            	<td align="right">Tabla:</td><td><input type="text" name="tabla" autocomplete="off" <?php if(isset($_GET['tabla'])){echo "value='".$_GET['tabla']."'";}?>
+            	<td align="right"><b>Tabla:</b></td><td><input type="text" name="tabla" autocomplete="off" <?php if(isset($_GET['tabla'])){echo "value='".$_GET['tabla']."'";}?>
 			list="tablas">
 			<datalist id="tablas">
 <?php

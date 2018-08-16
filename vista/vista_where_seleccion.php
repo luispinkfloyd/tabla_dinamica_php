@@ -1,5 +1,5 @@
-<table class="tabla-bordered" style="margin:auto;"><tr>
-	<td>Filtrar por valor de columna:</td>
+<table style="margin:auto;"><tr>
+	<td><b>Filtrar por valor de columna:</b></td>
     <td>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
     <input type="hidden" name="host" value="<?php echo $host;?>">
@@ -24,7 +24,7 @@ echo "<td><input type='submit' value='Seleccionar columna'></td>";
 if(isset($_GET['columna'])){
 $parametros_columna=$consulta->get_filas_column($schema,$tabla,$where,$seleccion_columna);
 ?>
-<td>Ingresar parámetro de búsqueda:</td>
+<td><b>Ingresar parámetro de búsqueda:</b></td>
 <td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){echo "value='".$_GET['where']."'>";}else{?>
 			list="parametros">
 			<datalist id="parametros">
