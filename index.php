@@ -11,7 +11,7 @@
 <?php
 include 'controlador/controlador.php';
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!– Importante llamar antes a jQuery para que funcione bootstrap.min.js   –> 
-<script src="js/bootstrap.min.js"></script> <!– Llamamos al  JavaScript de Bootstrap –>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
