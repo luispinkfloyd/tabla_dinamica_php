@@ -1,4 +1,4 @@
-<p><h1 align='center'><?php echo str_replace('_',' ',ucfirst($tabla)); ?></h1></p>
+<p><h1 align='center'><?php echo str_replace('_',' ',ucfirst($tabla))." (Cant. filas : $count_filas_total)"; ?></h1></p>
 <br>
 <div class="table-responsive" style="margin-top:6px;background-color:#c9f8ff;"> 
 <table class="table-bordered table-striped" style="margin:auto; white-space:nowrap; background-color:#FFFFFF; border:solid 2px #000000">
