@@ -25,7 +25,7 @@ if(isset($_GET['columna'])){
 $parametros_columna=$consulta->get_filas_column($schema,$tabla,$where,$seleccion_columna);
 ?>
 <td><b>Ingresar parámetro de búsqueda:</b></td>
-<td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){echo "value='".$_GET['where']."'>";}?>
+<td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){echo "value='".$_GET['where']."' ";}?>
 			list="parametros">
 			<datalist id="parametros">
 <?php
