@@ -7,6 +7,7 @@ class consulta{
 		private $schemas;
 		private $tablas;
 		private $filas_cant;
+		private $parametros = array();
 			public function __construct($pass="laika1",$host="localhost",$dbname="postgres",$usuario="postgres"){
 				require_once "clase_conexion.php";
 				$this->conexion_bd=Conexion::conectar($dbname,$pass,$host,$usuario);
@@ -102,7 +103,7 @@ class consulta{
 				$query=NULL;
 			}
 			public function get_columnas($nombre_tabla,$nombre_schema){
-				$sql="select COLUMN_NAME from INFORMATION_SCHEMA.columns col 
+				$sql="select column_name, data_type||coalesce('('||character_maximum_length::text||')','') as data_type from INFORMATION_SCHEMA.columns col 
 					where table_name = :table_name
 					and table_schema = :table_schema
 			   order by col.ordinal_position";
@@ -114,34 +115,15 @@ class consulta{
 				 	return $this->columnas;
 				$statement=NULL;
 			}
-			public function get_filas_column($schema,$tabla,$where,$columna){
-				$sql="select $tabla.$columna from $schema.$tabla";
-				if(isset($where)){
-					$sql .=$where;
-					}
+			public function get_filas_column($schema,$tabla,$columna){
+				$sql="select distinct($tabla.$columna) from $schema.$tabla";
 				$sql .=" group by $tabla.$columna";
-				$sql .=" order by $tabla.$columna";
 				$statement=$this->conexion_bd->prepare($sql);
 				$statement->execute();
 					while ($res_filas=$statement->fetch(PDO::FETCH_BOTH)){
-							$this->filas[]=$res_filas;
+							$this->parametros[]=$res_filas;
 								}
-					return $this->filas;
-				$statement=NULL;
-			}
-			public function get_filas_column2($schema,$tabla,$where2,$columna2){
-				$sql="select $tabla.$columna2 from $schema.$tabla";
-				if(isset($where2)){
-					$sql .=$where2;
-					}
-				$sql .=" group by $tabla.$columna";
-				$sql .=" order by $tabla.$columna";
-				$statement=$this->conexion_bd->prepare($sql);
-				$statement->execute();
-					while ($res_filas=$statement->fetch(PDO::FETCH_BOTH)){
-							$this->filas[]=$res_filas;
-								}
-					return $this->filas;
+					return $this->parametros;
 				$statement=NULL;
 			}
 	}

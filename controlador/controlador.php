@@ -24,7 +24,13 @@ if(isset($_GET['columna'])){
 	$seleccion_columna=$_GET['columna'];
 	}
 if(isset($_GET['where'])){
-	$where=" where ".$seleccion_columna."::text ilike '%".$_GET['where']."%'";
+	if($_GET['comparador_parametro'] == 'es igual a'){
+		$comparador = "= '".$_GET['where']."'";
+	}
+	if($_GET['comparador_parametro'] == 'contiene'){
+		$comparador = "ilike '%".$_GET['where']."%'";
+	}
+	$where=" where ".$seleccion_columna."::text ".$comparador;
 	}
 $offset=($paginacion->get_page()-1)*$limit;
 $count_filas_total=$consulta->get_filas_cant($schema,$tabla,$where,$and);

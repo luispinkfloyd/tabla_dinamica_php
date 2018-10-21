@@ -1,5 +1,5 @@
 <table style="margin:auto;"><tr>
-	<td><b>Filtrar por valor de columna:</b></td>
+	<td><b>Donde la columna</b></td>
     <td>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
     <input type="hidden" name="host" value="<?php echo $host;?>">
@@ -22,20 +22,24 @@ if(!isset($_GET['columna'])){
 echo "<td><input type='submit' value='Seleccionar columna'></td>";
 }
 if(isset($_GET['columna'])){
-$parametros_columna=$consulta->get_filas_column($schema,$tabla,$where,$seleccion_columna);
+$parametros_columna=$consulta->get_filas_column($schema,$tabla,$seleccion_columna);
 ?>
-<td><b>Ingresar parámetro de búsqueda:</b></td>
-<td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){echo "value='".$_GET['where']."' ";}?>
+<td style="padding: 0px 5px 0px 5px">
+	<select name="comparador_parametro">
+		<option>es igual a</option>
+		<option>contiene</option>
+	</select></td>
+<td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){ echo "value='".$_GET['where']."' ";}?>
 			list="parametros">
 			<datalist id="parametros">
 <?php
-	foreach($parametros_columna as $parametros){
-		echo "<option>".$parametros[0]."</option>";
+	foreach($parametros_columna as $parametro){
+		echo "<option>".$parametro[0]."</option>";
 	}
 ?>
 			</datalist>					
 <?php
-echo "<td><input type='submit' value='Buscar parámetro'></td>";
+echo "<td><input type='submit' value='Buscar'></td>";
 }
 ?>
 </form>

@@ -1,4 +1,4 @@
-<p><h1 align='center'><?php echo str_replace('_',' ',ucfirst($tabla))." (Filas = $count_filas_total)"; ?></h1></p>
+<p><h1 align='center'><?php echo 'tabla = '.$tabla."<br>registros totales = $count_filas_total"; ?></h1></p>
 <br>
 <div class="table-responsive" style="margin-top:6px;background-color:#c9f8ff;"> 
 <table class="table-bordered table-striped" style="margin:auto; white-space:nowrap; background-color:#FFFFFF; border:solid 2px #000000">
@@ -7,7 +7,7 @@
 for($i=0;$i<$count_columnas;$i++){
 ?>
     	<td>
-            	<b><?php echo str_replace('_',' ',ucfirst($resultado_columnas[$i][0])); ?></b>
+            	<b><?php echo $resultado_columnas[$i][0].'<br><small>'.$resultado_columnas[$i][1].'</small>'; ?></b>
         </td>
 <?php
 }
