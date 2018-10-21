@@ -1,4 +1,4 @@
-<div class="table-responsive" style="margin-top:6px;">
+<div class="table-responsive" style="margin-top:3px;">
 <table style="margin:auto;">
         	<tr>
             	<td align="right"><b>Base de datos:</b></td><td><input type="text" name="base_datos" autocomplete="off" <?php if(isset($_GET['base_datos'])){echo "value='".$_GET['base_datos']."'>";}else{?>

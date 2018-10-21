@@ -1,4 +1,4 @@
-<p><h1 align='center'><?php echo 'tabla = '.$tabla."<br>registros totales = $count_filas_total"; ?></h1></p>
+<p><h2 align='center'><?php echo 'tabla = '.$tabla." <small>(registros totales = $count_filas_total)</small>"; ?></h2></p>
 <br>
 <div class="table-responsive" style="margin-top:6px;background-color:#c9f8ff;"> 
 <table class="table-bordered table-striped" style="margin:auto; white-space:nowrap; background-color:#FFFFFF; border:solid 2px #000000">
@@ -15,7 +15,7 @@ for($i=0;$i<$count_columnas;$i++){
 	</tr>
 <?php
 if(empty($resultado_filas)){
-	echo "<tr><td colspan='".$count_columnas."' style='background-color:#FFFFFF;' align='center'><h2><b>Esta tabla no contiene datos</b></h2></td></tr>";
+	echo "<tr><td colspan='".$count_columnas."' style='background-color:#FFFFFF;' align='left'><h2><b>Esta tabla no contiene datos</b></h2></td></tr>";
 }else{
 	for($e=0;$e<$count_filas;$e++){
 	?>

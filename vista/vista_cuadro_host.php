@@ -1,4 +1,4 @@
-<div class="table-responsive" style="margin-top:6px;">
+<div class="table-responsive" style="margin-top:3px;">
 <table style="margin:auto;">
 	<tr>
     	<td align="right"><b>Indique host:</b></td>

@@ -1,3 +1,4 @@
+<div class="table-responsive" style="margin-top:3px;">
 <table style="margin:auto;"><tr>
 	<td><b>Donde la columna</b></td>
     <td>
@@ -7,7 +8,7 @@
     <input type="hidden" name="base_datos" value="<?php echo $base_datos;?>">
     <input type="hidden" name="schema" value="<?php echo $schema;?>">
     <input type="hidden" name="tabla" value="<?php echo $tabla;?>">
-    <input type="text" name="columna" autocomplete="off" <?php if(isset($_GET['columna'])){echo "value='".$_GET['columna']."'>";}else{?>
+    <input type="text" name="columna" autocomplete="off" <?php if(isset($_GET['columna'])){echo "value='".$_GET['columna']."' ";}?>
 			list="columnas">
 			<datalist id="columnas">
 <?php
@@ -16,11 +17,8 @@
 	}
 ?>
 			</datalist>					
-<?php }
+<?php
 echo "</td>";
-if(!isset($_GET['columna'])){
-echo "<td><input type='submit' value='Seleccionar columna'></td>";
-}
 if(isset($_GET['columna'])){
 $parametros_columna=$consulta->get_filas_column($schema,$tabla,$seleccion_columna);
 ?>
@@ -39,8 +37,10 @@ $parametros_columna=$consulta->get_filas_column($schema,$tabla,$seleccion_column
 ?>
 			</datalist>					
 <?php
-echo "<td><input type='submit' value='Buscar'></td>";
 }
+echo "<td><input type='submit' value='Buscar'></td>";
 ?>
 </form>
-</td></tr></table>
+</td></tr>
+</table>
+</div>
