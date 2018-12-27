@@ -24,8 +24,9 @@ $parametros_columna=$consulta->get_filas_column($schema,$tabla,$seleccion_column
 ?>
 <td style="padding: 0px 5px 0px 5px">
 	<select name="comparador_parametro">
-		<option>es igual a</option>
-		<option>contiene</option>
+		<option>Es igual a:</option>
+		<option>Contiene:</option>
+        <option>Incluye los valores:</option>
 	</select></td>
 <td><input type="text" name="where" autocomplete="off" <?php if(isset($_GET['where'])){ echo "value='".$_GET['where']."' ";}?>
 			list="parametros">

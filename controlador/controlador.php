@@ -29,13 +29,19 @@ if(isset($_GET['pass']) and isset($_GET['host'])){
 			$seleccion_columna=$_GET['columna'];
 			}
 		if(isset($_GET['where'])){
-			if($_GET['comparador_parametro'] == 'es igual a'){
+			if($_GET['comparador_parametro'] === 'Es igual a:'){
 				$comparador = "= '".$_GET['where']."'";
+				$set_type = '::text ';
 			}
-			if($_GET['comparador_parametro'] == 'contiene'){
+			if($_GET['comparador_parametro'] === 'Contiene:'){
 				$comparador = "ilike '%".$_GET['where']."%'";
+				$set_type = '::text ';
 			}
-			$where=" where ".$seleccion_columna."::text ".$comparador;
+			if($_GET['comparador_parametro'] === 'Incluye los valores:'){
+				$comparador = "in (".$_GET['where'].")";
+				$set_type = ' ';
+			}
+			$where=" where ".$seleccion_columna.$set_type.$comparador;
 			}
 		$offset=($paginacion->get_page()-1)*$limit;
 		$count_filas_total=$consulta->get_filas_cant($schema,$tabla,$where,$and);
